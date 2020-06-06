@@ -1,18 +1,27 @@
-div{
+body{
+    overflow: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
-div::-webkit-scrollbar{
+::-webkit-scrollbar{
     display: none;
 }
-
-li{
-    list-style-type: none;
+#nav{
+    z-index: 2;
 }
-
+#map{
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
 .category_bar{
-    float:left;
-   
+    position: sticky;
+    top:0;
+    display: inline-block;
+    padding:0 5%;
+    width: 90%;
+    background:rgba(255,255,255,0.9);
+    z-index: 1;
 }
 
 .category_bar a{
@@ -21,138 +30,115 @@ li{
 
 .list-group{
     text-align: center;
-    border:#9d9d9d solid 1px;
+    border-bottom:#d2d2d2 solid 1px;
 }
 
 .list-group ul{
     padding-left: 0;
+    margin: 0.7em 0;
 }
-
+.list-group li{
+    list-style-type: none;
+    display: inline-block;
+    padding:0 20px;
+}
 .list-group li:hover a{
     color:gray;
 }
-
 .content_bar{
-    overflow: scroll;
-    float:left;
-    
-}
-
-.content-name{
-    text-align:center;
-    color:#4d4d4d;
-    font-size:20px;
-}
-
-.card{
-    padding: 20px 10px;
-    border-bottom:gray dotted 1px;
+    position: relative;
+    padding:10px 5% 200px 5%;
 }
 
 .card-title{
-    margin:0;
-    margin-bottom: 2px;
+    margin:10px 0;
+    font-weight: bold;
 }
 .card-text{
-    padding-bottom:1px;
+    padding-bottom:20px;
     margin: 0;
-    
+    border-bottom:#d2d2d2 solid 1px;
 }
 .card-text a{
-    color:blue;
+    color:black;
 }
-
-
-@media only screen and (min-width:769px){
+a:hover{
+    color:gray;
+}
+#content1,#content2,#content3{
+    font-size: 1.5em;
+    font-weight: bold;
+    color:#FFB399;
+    margin-top: 30px;
+    text-align: center;
+}
+@media only screen and (min-device-width : 769px) and (min-width:1000px){
     .category_bar{
-        width:15%;
-        height:72vh;
-        padding:8px;
-        float:left;
-        font-size:15px;
-    }
-    .content_bar{
-        width:80%;
-        height:72vh;
-        padding:8px;
-        float:right;
-        overflow: scroll;
-    }
-    .content-name{
-        text-align:center;
-        color:#5d5d5d;
-        font-size:20px;
+        font-size:1.5em;
     }
    
     .card-title{
-        font-weight: bold;
-        font-size:20px;
+        font-size:1.5em;
     }
     
     .card-text{
-        font-size:15px;
+        font-size:1.2em;
+    }
+    #content1,#content2,#content3{
+        font-size:1.5em;
+    }
+}
+@media only screen and (min-device-width : 769px) and (max-width:999px){
+    .category_bar{
+        font-size: 2em;
+    }
+    .card-title{
+        font-size: 2em;
+    }
+    .card-text{
+        font-size: 1.7em;
+    }
+    #content1,#content2,#content3{
+        font-size:2em;
     }
 }
 
 @media only screen and (min-width : 426px) and (max-width : 768px){
     .category_bar{
-        width:15%;
-        height:72vh;
-        padding:5px;
-        float:left;
-        font-size:12px;
+        font-size:1.5em;
     }
-    .content_bar{
-        width:80%;
-        height:72vh;
-        padding:5px;
-        float:right;
-        overflow: scroll;
-    }
-    .content-name{
-        text-align:center;
-        color:#5d5d5d;
-        font-size:15px;
-    }
-   
+
     .card-title{
-        font-weight: bold;
-        font-size:15px;
+        font-size:1.5em;
     }
     
     .card-text{
-        font-size:12px;
+        font-size:1.2em;
+    }
+    .list-group li{
+        padding: 0 15px;
+    }
+    #content1,#content2,#content3{
+        font-size:1.5em;
     }
 }
 
 @media only screen and (max-width : 425px){
     .category_bar{
-        width:15%;
-        height:70vh;
-        padding:5px;
-        float:left;
-        font-size:8px;
-        
+        font-size:1.5em;
     }
-    .content_bar{
-        width:75%;
-        height:70vh;
-        padding:5px;
-        float:right;
-        overflow: scroll;
-    }
-    .content-name{
-        text-align:center;
-        color:#5d5d5d;
-        font-size:12px;
-    }
-   
+  
     .card-title{
-        font-weight: bold;
-        font-size:12px;
+        font-size:1.5em;
     }
     
     .card-text{
-        font-size:8px;
+        font-size:1.2em;
+    }
+    .list-group li{
+        padding: 0 10px;
+    }
+    #content1,#content2,#content3{
+        font-size:1.5em;
     }
 }

@@ -2,38 +2,40 @@
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="/static/introduction/intro_style.css"> 
-
-<div class="container">
+<link rel="stylesheet" type="text/css" href="/static/introduction/intro_style.css">
     <div class="category_bar">
         <div class="list-group">
             <ul>
-            <li><a href="/introduction" >All</a></li> 
+                <li><a href="#content1">크누냥이 소개</a></li>
+                <li><a href="#content2">크냥이 잘크냥 소개</a></li>
+                <li><a href="#content3">고양이 상식</a></li>
             </ul>
-            {% for c in categories %}
-            <ul>
-            <li><a href="{{c.get_absolute_url}}">{{c.title}}</a>
-            </ul>
-            {% endfor %}
-        
         </div>
     </div>
     <div class="content_bar">
-        <div class="content-name">
-            {% if current_category %}{{current_category.title}}{% else %}All{% endif %}
-        </div>
-        <div class="row">
-            {% for intro in introductions %}
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title">{{intro.title}}</p>
-                        <p class="card-text">{{intro.content|linebreaksbr|urlize}}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+        <div id="content1">[크누냥이]</div>
+            <p class="card-title">기능 소개</p>
+            <p class="card-text">크냥맵은 지도를 통해 고양이의 위치를 확인할 수 있습니다.<br>
+                크냥도감은 고양이들을 카테고리별로 분류하여 보여줍니다.<br>
+                냥이한컷은 고양이 사진을 통해 어떤 고양인지 알려줍니다. 4마리 고양이를 확인 할 수 있어요.<br></p>
+            <p class="card-title">목표</p>
+            <p class="card-text">경북대 고양이들의 정보를 제공함으로서 경북대학교 구성원들의 고양이에 대한 관심을 증대시키고, 나아가 냥집사로 양성시킨다.</p>
+            <p class="card-title">크냥이 X 해달</p>
+            <p class="card-text">경북대학교 동아리 크냥이 잘크냥과 IT대학 동아리 해달이 협업하여 만들었습니다.</p>
+        <div id="content2">[크냥이 잘크냥]</div>
+            <p class="card-title" >동아리 소개</p>
+            <p class="card-text">크냥이 잘크냥은 경북대학교 구성원들과 학교 고양이들의 공존을 꿈꾸는 길고양이 돌봄 동아리입니다.</p>
+            <p class="card-title">SNS주소</p>
+            <p class="card-text"><a href="https://ko-kr.facebook.com/knunyang/">페이스북</a><br>
+            <a href="https://www.instagram.com/knunyang/">인스타그램</a></p>
+        <div id="content3">[고양이 상식]</div>
+            <p class="card-title">tnr이란?</p>
+            <p class="card-text">tnr은 Trap Nueter Return의 약자로 길고양이들을 포획해서 중성화 수술은 한 후 다시 방사해주는걸 말합니다.<br>고양이들의 개체 수를 조절하고 괴로운 발정기의 고통을 없애줄 수 있어요. 중성화 수술을 하지 않으면 나중에 병에 걸릴 수도 있답니다.</p>
+            <p class="card-title">고양이 꼬리가 이상해요!</p>
+            <p class="card-text">몇몇 길 고양이들을 보면 꼬리가 꺽여있거나 모양이 이상한 것을 볼 수 있습니다.<br>
+                이는 다쳐서 생긴 상처일 수 도 있지만 어미 고양이의 뱃속에 있었을 때 영양분을 제대로 받지 못해서도 발생 할 수 있으며 사는데 큰 문제가 없으니 너무 걱정하지 않으셔도 됩니다.</p>
+            <p class="card-title">고양이가 너무 뚱뚱해요!</p>
+            <p class="card-text">가끔 뚱뚱한 길 고양이를 볼 수 있는데 사랑을 많이 받아서 살이 찐 걸 수도 있지만 물을 제대로 섭취하지 못해 부었거나 추운 겨울을 버티기 위해 털이 찐 걸 수도 있어요.</p>
     </div>
-</div>
+
 {% endblock %}
